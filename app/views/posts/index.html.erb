@@ -1,0 +1,14 @@
+<h1>Hello Welcome to My microBlog</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+
+<h1>Posts</h1>
+
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+    <%= link_to post.title, post %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Post", new_post_path %>
