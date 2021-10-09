@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  http_basic_authenticate_with name: "suraj", password: "suraj", except: [:index, :show]
   def index
     @posts = Post.all
   end
@@ -46,6 +47,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :status)
   end
 end
